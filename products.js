@@ -1,7 +1,7 @@
 const fs = require('fs').promises
 const path = require('path')
 
-const productsFile = path.join(__dirname, 'data/products.json')
+const productsFile = path.join(__dirname, 'data/full-products.json')
 
 async function list (options = {}) {
     const { offset = 0, limit = 25, tag } = options;
@@ -32,7 +32,8 @@ async function get (id) {
      // If no product is found, return null
     return null;
   }
+
 module.exports = {
     list,
-    get
+    get,
   }
