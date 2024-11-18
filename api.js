@@ -55,11 +55,20 @@ function handleRoot(req, res) {
     res.json(req.body)
   }
 
+  async function deleteProduct(req, res) {
+    const { id } = req.params;
   
+    console.log(`Product with ID ${id} deleted.`);
+  
+    // Respond with 202 (Accepted) status
+    res.status(202).json({ message: `Product with ID ${id} deleted.` });
+  }
+
   module.exports = autoCatch( {
     handleRoot,
     listProducts,
     getProduct,
     createProduct,
+    deleteProduct
 
 });
